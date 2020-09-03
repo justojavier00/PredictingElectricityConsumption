@@ -1,0 +1,11 @@
+version: '2.3'
+services:
+  ForecastingConsumption:
+    image: consumption:pred
+    command: sh /root/start.sh
+    ports:
+      - "8080:8080"
+    volumes:
+      - Data:/root/Data
+
+
