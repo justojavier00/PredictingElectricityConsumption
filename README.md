@@ -1,6 +1,6 @@
 # Introduction
 
-The goal of this document is to find a regression approach that can be used to predict electricity consumption from residential unit and household data. We have extracted the information form the [2009 version of the RECS program](https://www.eia.gov/consumption/residential/data/2009/index.php?view=microdata).
+The goal of this repo is to find a regression approach that can be used to predict electricity consumption from residential unit and household data. We have extracted the information form the [2009 version of the RECS program](https://www.eia.gov/consumption/residential/data/2009/index.php?view=microdata).
 
 We start with the data processing approach, then the creation of a training set and a test set, then use two selected regression frameworks, and end with a few concluding remarks.
 
@@ -14,7 +14,7 @@ We use One-hot encoding schema to convert this data to binary
 import pandas as pd
 from sklearn.preprocessing import OneHotEncoder
 
-df = pd.read_csv("recs2009_public.csv",index_col=0)
+df = pd.read_csv("Data/recs2009_public.csv",index_col=0)
 
 
 #There are many columns showing parameters like "temperature when...", but showing -2 when not applicable.
