@@ -14,7 +14,7 @@ We use One-hot encoding schema to convert this data to binary
 import pandas as pd
 from sklearn.preprocessing import OneHotEncoder
 
-df = pd.read_csv("recs2009_public.csv",index_col=0)
+df = pd.read_csv("Data/recs2009_public.csv",index_col=0)
 
 
 #There are many columns showing parameters like "temperature when...", but showing -2 when not applicable.
