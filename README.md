@@ -81,6 +81,8 @@ df_binary = pd.DataFrame(Y, index=df.index)
 #finally concatenate all the dataframes
 df_encoded = pd.concat([df[df.columns[838]],df_all_noncateg_and_binary,ds_717,df_all_noncateg_and_3_binaries,df_full_noncateg,df_binary],axis=1)
 
+```
+
 ## Creating a training set and a test set
 
 We create a training and a test set, using a random approach.
