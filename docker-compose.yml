@@ -1,12 +1,12 @@
 version: '2.3'
 services:
-  ForecastingConsumption:
+  PredictingConsumption:
     image: consumption:pred
     command: sh /root/start.sh
     ports:
       - "8080:8080"
     volumes:
-      - $HOME/ForecastingElectricityConsumption/Data:/root/Data
-      - $HOME/ForecastingElectricityConsumption/Code:/root/Code
+      - $HOME/PredictingElectricityConsumption/Data:/root/Data
+      - $HOME/PredictingElectricityConsumption/Code:/root/Code
 
 
