@@ -6,6 +6,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - /home/justo/ForecastingElectricityConsumption/Data:/root/Data
+      - $HOME/ForecastingElectricityConsumption/Data:/root/Data
+      - $HOME/ForecastingElectricityConsumption/Code:/root/Code
 
 
