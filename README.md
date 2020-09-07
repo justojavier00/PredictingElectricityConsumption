@@ -83,29 +83,11 @@ df_encoded = pd.concat([df[df.columns[838]],df_all_noncateg_and_binary,ds_717,df
 df_encoded
 
 
-```
-
-    /root/anaconda3/envs/Sensus/lib/python3.7/site-packages/IPython/core/interactiveshell.py:3072: DtypeWarning: Columns (717,718) have mixed types.Specify dtype option on import or set low_memory=False.
-      interactivity=interactivity, compiler=compiler, result=result)
 
 
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
