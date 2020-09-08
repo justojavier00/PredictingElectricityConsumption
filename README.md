@@ -119,8 +119,8 @@ clf = RandomForestClassifier(n_estimators = 250,max_depth=3,random_state=0, crit
 clf.fit(X_train, y_train)
 
 prediction = clf.predict(X_test)
-print("Standard Deviation of Diff:",np.std(prediction-y_test))     #see conclusions
-print("Standard Deviation of y_test:", np.std(y_test))             #see conclusions
+print("Standard Deviation of Diff:",np.std(prediction-y_test))     # See conclusions
+print("Standard Deviation of y_test:", np.std(y_test))             # See conclusions
 print("Root Mean Square Error: ",mean_squared_error(y_test, prediction, squared=False)) # Returns RMSE
 ```
 
@@ -143,8 +143,8 @@ kernel = DotProduct() + WhiteKernel()
 gpr = GaussianProcessRegressor(kernel=kernel,random_state=0).fit(X_train, y_train)
 
 prediction = gpr.predict(X_test)
-print("Standard Deviation of Diff:",np.std(prediction-y_test))     #see conclusions
-print("Standard Deviation of y_test:", np.std(y_test))             #see conclusions
+print("Standard Deviation of Diff:",np.std(prediction-y_test))     # See conclusions
+print("Standard Deviation of y_test:", np.std(y_test))             # See conclusions
 print("Root Mean Square Error: ",mean_squared_error(y_test, prediction, squared=False)) # Returns RMSE
 
 ```
