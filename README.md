@@ -84,7 +84,7 @@ enc.fit(X)
 Y = enc.transform(X).toarray()
 df_binary = pd.DataFrame(Y, index=df.index)
 
-# Finally concatenate all the dataframes
+# Finally concatenate all the dataframes.
 df_encoded = pd.concat([df[df.columns[838]],df_all_noncateg_and_binary,ds_717,df_all_noncateg_and_3_binaries,df_full_noncateg,df_binary],axis=1)
 
 ```
@@ -108,7 +108,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random
 ## Random Forest Classifier
 
 Because of the nature of the data, we expect it to be stochastic to some extent. 
-We start using random forest because of its simplicity
+We start using random forest because of its simplicity.
 
 
 ```python
