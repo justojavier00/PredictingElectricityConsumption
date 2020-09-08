@@ -39,13 +39,12 @@ df_all_noncateg_and_binary = pd.concat(list_all_noncateg_and_binary,axis=1)
 
 # In the case of column "NKRGALNC", 77 means "not sure". thus we have values -2 and 77 to trasnform to binary
 # And a non-categorical integer
-# in the same way 
 
 s = pd.to_numeric(df[df.columns[717]].replace('.',-2)) #asumming "." is "-2" to save time
 ds_717 = seriesIntoBinaryAndNonCateg(s,[-2,77])
 
-#In a similar way, columns 595 597 599 601, can be trasnform into a non-categorical column and 3 binary columns 
-#corresponding to values -2, -8, -9
+# In a similar way, columns 595 597 599 601, can be trasnform into a non-categorical column and 3 binary columns 
+# corresponding to values -2, -8, -9.
 
 cols_noncateg_and_3_binaries = {595,597,599,601}
 list_all_noncateg_and_3_binaries = list()
@@ -65,12 +64,12 @@ df_full_noncateg=df[df.columns[list(cols_full_noncateg)]]
 # Also, we have removed columns reflecting total energy consumption (from 'TOTALBTU' to 'TOTALDOLOTH').
 cols_to_ignore = set(list(range(839,856))+list(set(range(906,918))))
 
-#the raminig columns correspond to the full categorical ones
+# The raminig columns correspond to the full categorical ones.
 cols_full_categ = [col for col in range(len(df.columns)) if col not in cols_categ_with_binary \
                      and col not in cols_full_noncateg and col not in cols_noncateg_and_3_binaries \
                      and col != 717 and col not in cols_to_ignore and col != 838] #838 is the column to be predcited
 
-#We now start with the actual One-hot econding schema
+# We now start with the actual One-hot econding schema.
 df_categorical = df[df.columns[cols_full_categ]]
 X = df_categorical.to_numpy().tolist()
 enc = OneHotEncoder()
@@ -78,7 +77,7 @@ enc.fit(X)
 Y = enc.transform(X).toarray()
 df_binary = pd.DataFrame(Y, index=df.index)
 
-#finally concatenate all the dataframes
+# Finally concatenate all the dataframes
 df_encoded = pd.concat([df[df.columns[838]],df_all_noncateg_and_binary,ds_717,df_all_noncateg_and_3_binaries,df_full_noncateg,df_binary],axis=1)
 
 ```
@@ -115,7 +114,7 @@ clf.fit(X_train, y_train)
 prediction = clf.predict(X_test)
 print("Standard Deviation of Diff:",np.std(prediction-y_test))     #see conclusions
 print("Standard Deviation of y_test:", np.std(y_test))             #see conclusions
-print("Root Mean Square Error: ",mean_squared_error(y_test, prediction, squared=False)) #returns RMSE
+print("Root Mean Square Error: ",mean_squared_error(y_test, prediction, squared=False)) # Returns RMSE
 ```
 
     Standard Deviation of Diff: 5931.193861561492
@@ -139,7 +138,7 @@ gpr = GaussianProcessRegressor(kernel=kernel,random_state=0).fit(X_train, y_trai
 prediction = gpr.predict(X_test)
 print("Standard Deviation of Diff:",np.std(prediction-y_test))     #see conclusions
 print("Standard Deviation of y_test:", np.std(y_test))             #see conclusions
-print("Root Mean Square Error: ",mean_squared_error(y_test, prediction, squared=False)) #returns RMSE
+print("Root Mean Square Error: ",mean_squared_error(y_test, prediction, squared=False)) # Returns RMSE
 
 ```
 
