@@ -17,9 +17,9 @@ from sklearn.preprocessing import OneHotEncoder
 df = pd.read_csv("Data/recs2009_public.csv",index_col=0)
 
 
-#There are many columns showing parameters like "temperature when...", but showing -2 when not applicable.
-#We need to separate this type of data into a binary (not applicable or applicable) and a non-categorical column
-#In the non-categorical column, we will replace "-2" with the average of all the values larger than 0
+# There are many columns showing parameters like "temperature when...", but showing -2 when not applicable.
+# We need to separate this type of data into a binary (not applicable or applicable) and a non-categorical column
+# In the non-categorical column, we will replace "-2" with the average of all the values larger than 0
 
 def seriesIntoBinaryAndNonCateg(s,valuesToBinary):
     mean = s[~s.isin(valuesToBinary)].mean()
@@ -37,9 +37,9 @@ for col in cols_categ_with_binary:
     list_all_noncateg_and_binary.append(seriesIntoBinaryAndNonCateg(s,[-2]))
 df_all_noncateg_and_binary = pd.concat(list_all_noncateg_and_binary,axis=1)
 
-#In the case of column "NKRGALNC", 77 means "not sure". thus we have values -2 and 77 to trasnform to binary
-#And a non-categorical integer
-#in the same way 
+# In the case of column "NKRGALNC", 77 means "not sure". thus we have values -2 and 77 to trasnform to binary
+# And a non-categorical integer
+# in the same way 
 
 s = pd.to_numeric(df[df.columns[717]].replace('.',-2)) #asumming "." is "-2" to save time
 ds_717 = seriesIntoBinaryAndNonCateg(s,[-2,77])
