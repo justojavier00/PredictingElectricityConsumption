@@ -5,7 +5,7 @@ The goal of this repository is to find a regression approach that can be used to
 We start with the data processing step, then the creation of a training set and a test set, then use two selected regression frameworks, and end with a few concluding remarks.
 Find the code and results
 below or in the [original
-notebook](https://github.com/justojavier00/PredictingElectricityConsumption/blob/master/Code/ForecatingElectricityConsumption.ipynb).
+notebook](https://github.com/justojavier00/PredictingElectricityConsumption/blob/master/Code/PredictingElectricityConsumption.ipynb).
 
 ## Data Processing
 
@@ -15,7 +15,7 @@ We use One-hot encoding schema and another approach, as will be explained below,
 Data leakage is prevented by removing columns that are directly related to the electricity consumption (KWH). 
 Specifically, columns from 'KWHSPH' to 'DOLELRFG' are directly related to electricity usage and electricity cost.
 Also, columns from 'TOTALBTU' to 'TOTALDOLOTH' are composed of total energy consumption of different types. 
-The presence of these columns in the data gives the impression of abnormally high precision.
+The presence of these columns in the data leads to abnormally high precisions when applying some regression frameworks.
 
 ```python
 import pandas as pd
