@@ -15,7 +15,7 @@ We use One-hot encoding schema and another approach, as will be explained below,
 Data leakage is prevented by removing columns that are directly related to the electricity consumption (KWH). 
 Specifically, columns from 'KWHSPH' to 'DOLELRFG' are directly related to electricity usage and electricity cost.
 Also, columns from 'TOTALBTU' to 'TOTALDOLOTH' are composed of total energy consumption of different types. 
-The presence of these columns in the data gives the impression of abnormally high precision.
+The presence of these columns in the data leads to abnormally high precisions when applying some regression frameworks.
 
 ```python
 import pandas as pd
