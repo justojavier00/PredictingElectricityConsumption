@@ -5,7 +5,7 @@ The goal of this repository is to find a regression approach that can be used to
 We start with the data processing step, then the creation of a training set and a test set, then use two selected regression frameworks, and end with a few concluding remarks.
 Find the code and results
 below or in the [original
-notebook](https://github.com/justojavier00/PredictingElectricityConsumption/blob/master/Code/ForecatingElectricityConsumption.ipynb).
+notebook](https://github.com/justojavier00/PredictingElectricityConsumption/blob/master/Code/PredictingElectricityConsumption.ipynb).
 
 ## Data Processing
 
