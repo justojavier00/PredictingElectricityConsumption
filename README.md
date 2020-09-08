@@ -7,13 +7,12 @@ We start with the data processing approach, then the creation of a training set 
 ## Data Processing
 
 Many columns of the table have categorical data.
-We use One-hot encoding schema and another approach, as will be explain below, to convert this data to binary.
+We use One-hot encoding schema and another approach, as will be explained below, to convert this data to binary.
 
-Some Data leakage is prevented by removing columns that are directly related to to the electricity consumption (KWH). 
+Data leakage is prevented by removing columns that are directly related to the electricity consumption (KWH). 
 Specifically, columns from 'KWHSPH' to 'DOLELRFG' are directly related to electricity usage and electricity cost.
-Also, columns from 'TOTALBTU' to 'TOTALDOLOTH' are comprised of total energy consumption of a different types. 
-The presense of this columns in the data gives the impression of ex
-
+Also, columns from 'TOTALBTU' to 'TOTALDOLOTH' are composed of total energy consumption of different types. 
+The presence of these columns in the data gives the impression of abnormally high precision.
 
 ```python
 import pandas as pd
