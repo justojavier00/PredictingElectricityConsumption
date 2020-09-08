@@ -36,7 +36,7 @@ cols_categ_with_binary = set([21,22,26,29,38,41,44,48,54,146,152,310,460,462,466
 
 list_all_noncateg_and_binary = list()
 for col in cols_categ_with_binary:
-    #I found columns with "." that I am assuming to mean "again -2"
+    # I found columns with "." that I am assuming to mean "again -2"
     s = pd.to_numeric(df[df.columns[col]].replace('.',-2))
     list_all_noncateg_and_binary.append(seriesIntoBinaryAndNonCateg(s,[-2]))
 df_all_noncateg_and_binary = pd.concat(list_all_noncateg_and_binary,axis=1)
@@ -44,7 +44,7 @@ df_all_noncateg_and_binary = pd.concat(list_all_noncateg_and_binary,axis=1)
 # In the case of column "NKRGALNC", 77 means "not sure". thus we have values -2 and 77 to trasnform to binary
 # And a non-categorical integer
 
-s = pd.to_numeric(df[df.columns[717]].replace('.',-2)) #asumming "." is "-2" to save time
+s = pd.to_numeric(df[df.columns[717]].replace('.',-2)) # Asumming "." is "-2" to save time
 ds_717 = seriesIntoBinaryAndNonCateg(s,[-2,77])
 
 # In a similar way, columns 595 597 599 601, can be trasnform into a non-categorical column and 3 binary columns 
@@ -53,7 +53,7 @@ ds_717 = seriesIntoBinaryAndNonCateg(s,[-2,77])
 cols_noncateg_and_3_binaries = {595,597,599,601}
 list_all_noncateg_and_3_binaries = list()
 for col in cols_noncateg_and_3_binaries:
-    s = pd.to_numeric(df[df.columns[col]].replace('.',-2)) #asumming "." is "-2" to save time
+    s = pd.to_numeric(df[df.columns[col]].replace('.',-2)) # Asumming "." is "-2" to save time
     list_all_noncateg_and_3_binaries.append(seriesIntoBinaryAndNonCateg(s,[-2,-8,-9]))
 
 df_all_noncateg_and_3_binaries = pd.concat(list_all_noncateg_and_3_binaries,axis=1)
