@@ -108,7 +108,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random
 ## Random Forest Classifier
 
 Because of the nature of the data, we expect it to be stochastic to some extent. 
-Thus, we start using random forest because of its simplicity
+We start using random forest because of its simplicity
 
 
 ```python
