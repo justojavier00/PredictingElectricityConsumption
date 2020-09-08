@@ -2,7 +2,7 @@
 
 The goal of this repository is to find a regression approach that can be used to predict electricity consumption from residential unit and household data. We have extracted the information from the [2009 version of the RECS program](https://www.eia.gov/consumption/residential/data/2009/index.php?view=microdata).
 
-We start with the data processing approach, then the creation of a training set and a test set, then use two selected regression frameworks, and end with a few concluding remarks.
+We start with the data processing step, then the creation of a training set and a test set, then use two selected regression frameworks, and end with a few concluding remarks.
 
 ## Data Processing
 
