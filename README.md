@@ -159,7 +159,8 @@ print("Root Mean Square Error: ",mean_squared_error(y_test, prediction, squared=
 
 We use the root mean square error as a measure of the error of the prediction, and the standard deviation of the difference between the true values and the predicted corresponding values as a sanity check. This is, if the standard deviation of 'prediction-y_test' is lower than the standard deviation of 'y_test', the prediction is being successful to some extent.
 
-Both the random forest classifier and the Gaussian process regressor predict to some extent the electricity consumption. However, the latter is considerably better at making this prediction. None of the two models is exceptionally good and further exploration is necessary.
+Both the random forest classifier and the Gaussian process regressor predict to some extent the electricity consumption. The latter is considerably better at making this prediction. However, none of the two models is exceptionally good and further exploration is necessary. These two models may serve as the
+first two benchmark models to eventually obtain an optimal solution.
 
 
 ```python
